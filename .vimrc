@@ -1,5 +1,10 @@
 execute pathogen#infect()
-syntax on
 filetype plugin indent on
+
+" syntax highlighting
+syntax on
+
+" line numbers
 set number
+set relativenumber
 
