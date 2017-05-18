@@ -8,3 +8,6 @@ syntax on
 set number
 set relativenumber
 
+" set theme
+colo delek
+
