@@ -15,6 +15,10 @@ set laststatus=2
 set number
 set relativenumber
 
+" tab settings
+set tabstop=2
+set expandtab
+
 " extra settings for CtrlP
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>r :CtrlPBufTag<CR>
