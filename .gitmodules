@@ -1,6 +1,3 @@
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = https://github.com/wincent/command-t.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git@github.com:vim-ruby/vim-ruby.git
@@ -19,3 +16,6 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = git@github.com:vim-airline/vim-airline.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git

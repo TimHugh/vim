@@ -1,7 +1,8 @@
 execute pathogen#infect()
+execute pathogen#helptags()
 filetype plugin indent on
 
-" specify terminal (fixes conflicts with tmux)
+" specify terminal (helps with tmux and colors)
 set term=screen-256color
 
 " syntax highlighting
@@ -14,9 +15,13 @@ set laststatus=2
 set number
 set relativenumber
 
+" extra settings for CtrlP
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>r :CtrlPBufTag<CR>
+
 " .vimrc shortcuts
-nnoremap <leader>ev :e $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+noremap <leader>ev :tabnew $MYVIMRC<CR>
+noremap <leader>sv :source $MYVIMRC<CR>
 " TODO: autoreload on save ?
 
 " set theme
