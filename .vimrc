@@ -3,25 +3,26 @@ execute pathogen#helptags()
 filetype plugin indent on
 
 " specify terminal (helps with tmux and colors)
-set term=screen-256color
+set term = screen-256color
 
 " syntax highlighting
 syntax on
 
 " always show status bar
-set laststatus=2
+set laststatus = 2
 
 " line numbers
 set number
 set relativenumber
 
 " tab settings
-set tabstop=2
+set tabstop = 2
 set expandtab
 
 " extra settings for CtrlP
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>r :CtrlPBufTag<CR>
+let g:ctrlp_show_hidden = 1
 
 " .vimrc shortcuts
 noremap <leader>ev :tabnew $MYVIMRC<CR>
