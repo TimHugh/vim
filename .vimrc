@@ -29,7 +29,7 @@ noremap <leader>sv :source $MYVIMRC<CR>
 " TODO: autoreload on save ?
 
 " set theme
-colo delek
+colo molokai
 
 " highlight trailing whitespace
 highlight ExtraWhiteSpace ctermbg=red
