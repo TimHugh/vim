@@ -1,5 +1,6 @@
 execute pathogen#infect()
 execute pathogen#helptags()
+
 filetype plugin indent on
 
 " specify terminal (helps with tmux and colors)
@@ -17,6 +18,7 @@ set relativenumber
 
 " tab settings
 set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " extra settings for CtrlP
