@@ -28,9 +28,6 @@ noremap <leader>ev :tabnew $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
 " TODO: autoreload on save ?
 
-" set theme
-colo molokai
-
 " highlight trailing whitespace
 highlight ExtraWhiteSpace ctermbg=red
 match ExtraWhiteSpace /\s\+$/
