@@ -19,6 +19,15 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = git@github.com:kien/ctrlp.vim.git
-[submodule "bundle/molokai"]
-	path = bundle/molokai
-	url = git@github.com:tomasr/molokai.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = git://github.com/fatih/vim-go.git
+[submodule "bundle/editorconfig-vim"]
+	path = bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
