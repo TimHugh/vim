@@ -34,6 +34,9 @@ nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>r :CtrlPBufTag<CR>
 let g:ctrlp_show_hidden=1
 
+" tagbar settings
+nnoremap <leader>T :TagbarOpenAutoClose<CR>
+
 " .vimrc shortcuts
 noremap <leader>ev :tabnew $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
