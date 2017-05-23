@@ -26,6 +26,7 @@ set smartindent
 
 syntax on
 set hlsearch
+nnoremap ,/ :noh<CR>
 
 " more natural window splitting
 set splitbelow
