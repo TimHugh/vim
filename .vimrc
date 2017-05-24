@@ -8,8 +8,8 @@ filetype plugin indent on
 " specify terminal (helps with tmux and colors)
 set term=screen-256color
 
-" always show status bar (mostly so powerline is visible)
 set laststatus=2
+set ruler
 
 set noerrorbells
 set novisualbell
