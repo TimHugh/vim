@@ -29,7 +29,8 @@ set directory=$HOME/.vim/swapfiles//
 
 syntax on
 set hlsearch
-nnoremap ,/ :noh<CR>
+set incsearch
+nmap <silent> ,/ :nohlsearch<CR>
 
 " more natural window splitting
 set splitbelow
