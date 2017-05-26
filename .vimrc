@@ -24,6 +24,9 @@ set expandtab
 set autoindent
 set smartindent
 
+" set swap file directory
+set directory=$HOME/.vim/swapfiles//
+
 syntax on
 set hlsearch
 nnoremap ,/ :noh<CR>
