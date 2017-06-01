@@ -30,7 +30,17 @@ set directory=$HOME/.vim/swapfiles//
 syntax on
 set hlsearch
 set incsearch
+set ignorecase
 nmap <silent> ,/ :nohlsearch<CR>
+
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
 
 " more natural window splitting
 set splitbelow
@@ -63,6 +73,7 @@ autocmd InsertLeave * match ExtraWhiteSpace /\s\+$/
 " white space strip function
 function! TrimWhiteSpace()
   " TODO: newline at end of file
+  " TODO: maintain cursor position
 	%s/\s\+$//e
 endfunction
 autocmd BufWritePre * :call TrimWhiteSpace()
