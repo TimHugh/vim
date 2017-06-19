@@ -23,6 +23,7 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
+set backspace=indent,eol,start
 
 " set swap file directory
 set directory=$HOME/.vim/swapfiles//
