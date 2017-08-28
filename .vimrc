@@ -3,7 +3,7 @@ execute pathogen#helptags()
 
 filetype plugin indent on
 
-" let mapleader=" "
+let mapleader=","
 
 " specify terminal (helps with tmux and colors)
 set term=screen-256color
@@ -32,7 +32,7 @@ syntax on
 set hlsearch
 set incsearch
 set ignorecase
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
