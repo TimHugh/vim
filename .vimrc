@@ -4,6 +4,7 @@ execute pathogen#helptags()
 filetype plugin indent on
 
 let mapleader=","
+imap jj <ESC>
 
 " specify terminal (helps with tmux and colors)
 set term=screen-256color
