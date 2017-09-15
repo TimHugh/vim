@@ -1,0 +1,15 @@
+# enable vi-style keybindings for GNU readline
+set editing-mode vi
+
+$if mode=vi
+
+  # normal mode
+  set keymap vi-command
+  Control-l: clear-screen
+
+  # insert mode
+  set keymap vi-insert
+  "jj": vi-movement-mode
+  Control-l: clear-screen
+
+$endif
