@@ -57,6 +57,9 @@ nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>r :CtrlPBufTag<CR>
 let g:ctrlp_show_hidden=1
 
+" open git log in quickfix
+nnoremap <leader>gl :Glog<CR>:copen<CR>
+
 " tagbar settings
 nnoremap <leader>T :TagbarOpenAutoClose<CR>
 
