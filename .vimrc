@@ -2,21 +2,22 @@ execute pathogen#infect()
 execute pathogen#helptags()
 
 filetype plugin indent on
+syntax on
 
 let mapleader=","
-imap jj <ESC>
 
 " specify terminal (helps with tmux and colors)
 set term=screen-256color
 
+set noerrorbells novisualbell
+
 set laststatus=2
-set ruler
-
-set noerrorbells
-set novisualbell
-
-set number
-set relativenumber
+set ruler number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
+augroup END
 
 " TODO: make these language-specific
 set tabstop=2
@@ -26,23 +27,31 @@ set autoindent
 set smartindent
 set backspace=indent,eol,start
 
-" set swap file directory
+" set swap file directory to keep git working directories clean
 set directory=$HOME/.vim/swapfiles//
 
-syntax on
+" default to system clipboard
+set clipboard=unnamed
+
+" search settings
 set hlsearch
 set incsearch
 set ignorecase
+" shortcut to clear search results aka visual clutter
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+" improved search with 'ag' executable
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
+
+  command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+  nnoremap \ :Ag<SPACE>
 endif
+
+" search cwd for highlighted word
 nnoremap <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
 
 " more natural window splitting
 set splitbelow
@@ -61,7 +70,7 @@ let g:ctrlp_show_hidden=1
 nnoremap <leader>gl :Glog<CR>:copen<CR>
 
 " tagbar settings
-nnoremap <leader>T :TagbarOpenAutoClose<CR>
+nnoremap <leader>R :TagbarOpenAutoClose<CR>
 
 " .vimrc shortcuts
 noremap <leader>ev :tabnew $MYVIMRC<CR>
@@ -69,13 +78,13 @@ noremap <leader>sv :source $MYVIMRC<CR>
 " TODO: autoreload on save ?
 
 " highlight trailing whitespace
-highlight ExtraWhiteSpace ctermbg=red
+highlight ExtraWhiteSpace ctermbg=DarkRed
 match ExtraWhiteSpace /\s\+$/
 autocmd BufWinEnter * match ExtraWhiteSpace /\s\+$/
 autocmd InsertEnter * match ExtraWhiteSpace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhiteSpace /\s\+$/
 
-" white space strip function
+" auto trim white space on file save
 function! TrimWhiteSpace()
   " TODO: newline at end of file
   " TODO: maintain cursor position
