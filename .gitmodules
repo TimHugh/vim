@@ -40,3 +40,6 @@
 [submodule "bundle/vim-crystal"]
 	path = bundle/vim-crystal
 	url = git@github.com:rhysd/vim-crystal.git
+[submodule "bundle/vim-rubocop"]
+	path = bundle/vim-rubocop
+	url = git@github.com:ngmy/vim-rubocop.git
