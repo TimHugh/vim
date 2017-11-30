@@ -75,7 +75,7 @@ nnoremap <leader>R :TagbarOpenAutoClose<CR>
 " .vimrc shortcuts
 noremap <leader>ev :tabnew $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
-" TODO: autoreload on save ?
+autocmd BufWritePost .vimrc source %
 
 " highlight trailing whitespace
 highlight ExtraWhiteSpace ctermbg=DarkRed
