@@ -8,6 +8,7 @@ let mapleader=","
 
 " specify terminal (helps with tmux and colors)
 set term=screen-256color
+colorscheme elflord
 
 set noerrorbells novisualbell
 
