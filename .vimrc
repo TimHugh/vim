@@ -54,6 +54,9 @@ endif
 " search cwd for highlighted word
 nnoremap <leader>* :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" join lines with comma delimiter
+nnoremap <leader>J :s/\n/, /<CR>
+
 " more natural window splitting
 set splitbelow
 set splitright
