@@ -102,3 +102,5 @@ if executable('rubocop')
   let g:vimrubocop_extra_args = '-D'
 endif
 
+" allow JSX syntax in .JS files
+let g:jsx_ext_required = 0
