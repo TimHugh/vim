@@ -98,7 +98,7 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 
 " auto run rubocop when saving ruby files
 if executable('rubocop')
-  autocmd BufWritePost *.rb :RuboCop
+  " autocmd BufWritePost *.rb :RuboCop
   let g:vimrubocop_extra_args = '-D'
 endif
 
