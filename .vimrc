@@ -1,9 +1,18 @@
 set nocompatible
+syntax on
+set nowrap
+set encoding=utf8
+
+""" Vundle configuration
+
+" Vundle requires filetype off
 filetype off
 
+" add Vundle dir to path and init
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Vundle manages itself
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'jiangmiao/auto-pairs'
@@ -29,7 +38,6 @@ Plugin 'lucapette/vim-textobj-underscore'
 call vundle#end()
 
 filetype plugin indent on
-syntax on
 
 let mapleader=","
 
