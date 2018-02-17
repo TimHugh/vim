@@ -76,6 +76,15 @@ nnoremap <leader>gl :Glog<CR>:copen<CR>
 " tagbar settings
 nnoremap <leader>R :TagbarOpenAutoClose<CR>
 
+" netrw settings
+nnoremap <leader>v :Vex<CR>
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 15
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_preview = 1
+let g:netrw_altv = 1
+
 " .vimrc shortcuts
 noremap <leader>ev :tabnew $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
