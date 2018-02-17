@@ -1,5 +1,32 @@
-execute pathogen#infect()
-execute pathogen#helptags()
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-endwise'
+Plugin 'kien/ctrlp.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-fugitive'
+
+" language support
+Plugin 'rhysd/vim-crystal'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'fatih/vim-go'
+
+" enhanced selectors
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'lucapette/vim-textobj-underscore'
+
+call vundle#end()
 
 filetype plugin indent on
 syntax on
