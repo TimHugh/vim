@@ -2,13 +2,15 @@ set nocompatible
 syntax on
 set nowrap
 set encoding=utf8
+set term=screen-256color
+colorscheme elflord
+set noerrorbells novisualbell
 
-""" Vundle configuration
+let mapleader=","
 
-" Vundle requires filetype off
+
+""" START VUNDLE CONFIG
 filetype off
-
-" add Vundle dir to path and init
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -39,16 +41,10 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'lucapette/vim-textobj-underscore'
 
 call vundle#end()
-
 filetype plugin indent on
+""" END VUNDLE CONFIG
 
-let mapleader=","
 
-" specify terminal (helps with tmux and colors)
-set term=screen-256color
-colorscheme elflord
-
-set noerrorbells novisualbell
 
 set laststatus=2
 set ruler number relativenumber
