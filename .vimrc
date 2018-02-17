@@ -15,6 +15,8 @@ call vundle#begin()
 " Vundle manages itself
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'scrooloose/nerdtree'
+
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'tpope/vim-endwise'
@@ -77,6 +79,13 @@ set ignorecase
 " shortcut to clear search results aka visual clutter
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+" some NERDTree settings
+map <leader>n :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " improved search with 'ag' executable
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
@@ -111,15 +120,6 @@ nnoremap <leader>gl :Glog<CR>:copen<CR>
 
 " tagbar settings
 nnoremap <leader>R :TagbarOpenAutoClose<CR>
-
-" netrw settings
-nnoremap <leader>v :Vex<CR>
-let g:netrw_browse_split = 4
-let g:netrw_winsize = 15
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_preview = 1
-let g:netrw_altv = 1
 
 " .vimrc shortcuts
 noremap <leader>ev :tabnew $MYVIMRC<CR>
