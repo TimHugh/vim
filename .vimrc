@@ -26,6 +26,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/StripWhiteSpaces'
 
 " language support
 Plugin 'rhysd/vim-crystal'
@@ -80,6 +81,9 @@ map <leader>n :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 
+" StripWhiteSpaces config
+let g:strip_trailing_lines = 1
+
 " improved search with 'ag' executable
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
@@ -120,22 +124,6 @@ noremap <leader>ev :tabnew $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
 autocmd BufWritePost .vimrc source %
 
-" highlight trailing whitespace
-highlight ExtraWhiteSpace ctermbg=DarkRed
-match ExtraWhiteSpace /\s\+$/
-autocmd BufWinEnter * match ExtraWhiteSpace /\s\+$/
-autocmd InsertEnter * match ExtraWhiteSpace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhiteSpace /\s\+$/
-
-" auto trim white space on file save
-function! TrimWhiteSpace()
-  " TODO: newline at end of file
-  " TODO: maintain cursor position
-	%s/\s\+$//e
-endfunction
-autocmd BufWritePre * :call TrimWhiteSpace()
-
-" auto run rubocop when saving ruby files
 if executable('rubocop')
   " autocmd BufWritePost *.rb :RuboCop
   let g:vimrubocop_extra_args = '-D'
