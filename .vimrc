@@ -19,6 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'tpope/vim-endwise'
@@ -46,21 +47,43 @@ filetype plugin indent on
 """ END VUNDLE CONFIG
 
 
+""" START PLUGIN CONFIG
 
+" tagbar config
+nnoremap <leader>R :TagbarOpenAutoClose<CR>
+
+" vim-jsx config
+let g:jsx_ext_required = 0
+
+" nerdtree config
+map <leader>n :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+
+" ctrlp.vim config
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>r :CtrlPBufTag<CR>
+let g:ctrlp_show_hidden=1
+
+" StripWhiteSpaces config
+let g:strip_trailing_lines = 1
+
+" vim-fugitive config
+nnoremap <leader>gl :Glog<CR>:copen<CR>
+
+""" END PLUGIN CONFIG
+
+
+" status bar tweaks
 set laststatus=2
 set ruler number relativenumber
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter * set norelativenumber
-augroup END
 
-" TODO: make these language-specific
+" tab stuff
 set tabstop=2
 set shiftwidth=2
-set expandtab
-set autoindent
-set smartindent
+set expandtab autoindent smartindent
+
+" more natural backspace behaviour
 set backspace=indent,eol,start
 
 " set swap file directory to keep git working directories clean
@@ -70,23 +93,13 @@ set directory=$HOME/.vim/swapfiles//
 set clipboard=unnamed
 
 " search settings
-set hlsearch
-set incsearch
-set ignorecase
-" shortcut to clear search results aka visual clutter
+set hlsearch incsearch ignorecase
 nmap <silent> <leader>/ :nohlsearch<CR>
-
-" some NERDTree settings
-map <leader>n :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-
-" StripWhiteSpaces config
-let g:strip_trailing_lines = 1
-
-" improved search with 'ag' executable
+" Use ag for search
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag for ctrlp.vim, as well
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 
@@ -108,18 +121,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
-" extra settings for CtrlP
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>r :CtrlPBufTag<CR>
-let g:ctrlp_show_hidden=1
-
-" open git log in quickfix
-nnoremap <leader>gl :Glog<CR>:copen<CR>
-
-" tagbar settings
-nnoremap <leader>R :TagbarOpenAutoClose<CR>
-
-" .vimrc shortcuts
+" .vimrc editing shortcuts
 noremap <leader>ev :tabnew $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
 autocmd BufWritePost .vimrc source %
@@ -128,27 +130,3 @@ if executable('rubocop')
   " autocmd BufWritePost *.rb :RuboCop
   let g:vimrubocop_extra_args = '-D'
 endif
-
-" allow JSX syntax in .JS files
-let g:jsx_ext_required = 0
-
-" Highlight word under cursor
-nnoremap <leader>h :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
-function! AutoHighlightToggle()
-  let @/ = ''
-  if exists('#auto_highlight')
-    au! auto_highlight
-    augroup! auto_highlight
-    setl updatetime=4000
-    echo 'Highlight current word: off'
-    return 0
-  else
-    augroup auto_highlight
-    au!
-    au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
-    augroup end
-    setl updatetime=500
-    echo 'Highlight current word: on'
-    return 1
-  endif
-endfunction
