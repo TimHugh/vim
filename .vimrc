@@ -3,7 +3,7 @@ syntax on
 set nowrap
 set encoding=utf8
 set term=screen-256color
-colorscheme elflord
+colorscheme delek
 set noerrorbells novisualbell
 
 let mapleader=","
@@ -28,6 +28,9 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/StripWhiteSpaces'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " language support
 Plugin 'rhysd/vim-crystal'
@@ -61,9 +64,12 @@ let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 
 " ctrlp.vim config
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>r :CtrlPBufTag<CR>
+let g:ctrlp_map = '<leader>t'
 let g:ctrlp_show_hidden=1
+nnoremap <leader>r :CtrlPBufTag<CR>
+let g:ctrlp_buftag_types = {
+\   'go' : '--language-force=go --go-types=d'
+\ }
 
 " StripWhiteSpaces config
 let g:strip_trailing_lines = 1
@@ -75,8 +81,8 @@ nnoremap <leader>gl :Glog<CR>:copen<CR>
 
 
 " status bar tweaks
-set laststatus=2
-set ruler number relativenumber
+"set laststatus=2
+"set ruler number relativenumber
 
 " tab stuff
 set tabstop=2
@@ -124,7 +130,7 @@ nnoremap <C-L> <C-W><C-L>
 " .vimrc editing shortcuts
 noremap <leader>ev :tabnew $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
-autocmd BufWritePost .vimrc source %
+" autocmd BufWritePost .vimrc source %
 
 if executable('rubocop')
   " autocmd BufWritePost *.rb :RuboCop
