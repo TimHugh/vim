@@ -7,6 +7,7 @@ colorscheme delek
 set noerrorbells novisualbell
 
 let mapleader=","
+inoremap jj <esc>
 
 
 """ START VUNDLE CONFIG
