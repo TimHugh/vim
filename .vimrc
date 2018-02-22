@@ -71,6 +71,10 @@ nnoremap <leader>r :CtrlPBufTag<CR>
 let g:ctrlp_buftag_types = {
 \   'go' : '--language-force=go --go-types=d'
 \ }
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif
 
 " StripWhiteSpaces config
 let g:strip_trailing_lines = 1
@@ -81,9 +85,13 @@ nnoremap <leader>gl :Glog<CR>:copen<CR>
 """ END PLUGIN CONFIG
 
 
-" status bar tweaks
-"set laststatus=2
-"set ruler number relativenumber
+" auto display line numbers in active buffer
+set relativenumber
+" augroup numbertoggle
+"   autocmd!
+"   autocmd BufEnter,FocusGained * set relativenumber
+"   autocmd BufLeave,FocusLost * set norelativenumber
+" augroup END
 
 " tab stuff
 set tabstop=2
@@ -102,14 +110,10 @@ set clipboard=unnamed
 " search settings
 set hlsearch incsearch ignorecase
 nmap <silent> <leader>/ :nohlsearch<CR>
+
 " Use ag for search
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag for ctrlp.vim, as well
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
-
   command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
   nnoremap \ :Ag<SPACE>
 endif
@@ -132,8 +136,3 @@ nnoremap <C-L> <C-W><C-L>
 noremap <leader>ev :tabnew $MYVIMRC<CR>
 noremap <leader>sv :source $MYVIMRC<CR>
 " autocmd BufWritePost .vimrc source %
-
-if executable('rubocop')
-  " autocmd BufWritePost *.rb :RuboCop
-  let g:vimrubocop_extra_args = '-D'
-endif
