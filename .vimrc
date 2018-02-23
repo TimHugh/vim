@@ -1,6 +1,5 @@
 set nocompatible
 syntax on
-set nowrap
 set encoding=utf8
 set term=screen-256color
 colorscheme delek
@@ -84,6 +83,10 @@ nnoremap <leader>gl :Glog<CR>:copen<CR>
 
 """ END PLUGIN CONFIG
 
+
+" toggle word wrap
+set nowrap
+nnoremap <leader>W :set wrap!<CR>
 
 " auto display line numbers in active buffer
 set relativenumber
