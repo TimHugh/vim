@@ -28,6 +28,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/StripWhiteSpaces'
+Plugin 'vim-scripts/confluencewiki.vim'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
