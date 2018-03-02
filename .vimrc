@@ -67,6 +67,7 @@ let NERDTreeShowHidden=1
 " ctrlp.vim config
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_show_hidden=1
+let g:ctrlp_switch_buffer=0
 nnoremap <leader>r :CtrlPBufTag<CR>
 let g:ctrlp_buftag_types = {
 \   'go' : '--language-force=go --go-types=d'
