@@ -90,6 +90,12 @@ nnoremap <leader>gl :Glog<CR>:copen<CR>
 set nowrap
 nnoremap <leader>W :set wrap!<CR>
 
+" open tab and set local working directory in first window
+" (effectively, this should mean that every window opened in that tab will use
+" the local working directory)
+command! -nargs=1 -complete=file Tab silent! :tabe <args> | :lcd <args>
+nnoremap <leader>T :Tab<SPACE>
+
 " auto display line numbers in active buffer
 set relativenumber
 " augroup numbertoggle
@@ -98,7 +104,7 @@ set relativenumber
 "   autocmd BufLeave,FocusLost * set norelativenumber
 " augroup END
 
-" tab stuff
+" indentation stuff
 set tabstop=2
 set shiftwidth=2
 set expandtab autoindent smartindent
