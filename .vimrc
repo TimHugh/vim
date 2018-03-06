@@ -97,7 +97,7 @@ nnoremap <leader>W :set wrap!<CR>
 " (effectively, this should mean that every window opened in that tab will use
 " the local working directory)
 command! -nargs=1 -complete=file Tab silent! :tabe <args> | :lcd <args>
-nnoremap <leader>T :Tab<SPACE>
+nnoremap <leader>E :Tab<SPACE>
 
 " auto display line numbers in active buffer
 set relativenumber
