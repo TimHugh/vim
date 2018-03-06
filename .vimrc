@@ -23,6 +23,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'tommcdo/vim-fubitive'
 
+" writing stuff
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
+
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'michaeljsmith/vim-indent-object'
@@ -55,6 +59,11 @@ filetype plugin indent on
 
 
 """ START PLUGIN CONFIG
+
+" goyo / limelight config
+let g:limelight_conceal_ctermfg = 'gray'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " tagbar config
 nnoremap <leader>R :TagbarOpenAutoClose<CR>
