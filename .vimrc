@@ -63,9 +63,18 @@ filetype plugin indent on
 """ START PLUGIN CONFIG
 
 " goyo / limelight config
+let g:goyo_width = 120
 let g:limelight_conceal_ctermfg = 'gray'
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+function! s:goyo_enter()
+  set wrap linebreak
+  Limelight
+endfunction
+function! s:goyo_leave()
+  set nowrap nolinebreak
+  Limelight!
+endfunction
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " tagbar config
 nnoremap <leader>R :TagbarOpenAutoClose<CR>
