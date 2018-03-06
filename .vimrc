@@ -19,6 +19,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'tommcdo/vim-fubitive'
+
 Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'michaeljsmith/vim-indent-object'
@@ -26,7 +30,6 @@ Plugin 'tpope/vim-endwise'
 Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/StripWhiteSpaces'
 Plugin 'vim-scripts/confluencewiki.vim'
 
