@@ -19,9 +19,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 
+" git stuff
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'tommcdo/vim-fubitive'
+Plugin 'airblade/vim-gitgutter'
 
 " writing stuff
 Plugin 'junegunn/goyo.vim'
