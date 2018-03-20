@@ -66,6 +66,7 @@ filetype plugin indent on
 """ START PLUGIN CONFIG
 
 " goyo / limelight config
+nnoremap <leader>G :Goyo<CR>
 let g:goyo_width = 120
 let g:limelight_conceal_ctermfg = 'gray'
 function! s:goyo_enter()
