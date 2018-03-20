@@ -19,6 +19,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 " git stuff
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
@@ -33,22 +36,22 @@ Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'tpope/vim-endwise'
-Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/StripWhiteSpaces'
-Plugin 'vim-scripts/confluencewiki.vim'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" tag browsing / searching
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'gasparch/ctrlp-tagbar.vim'
 
-" language support
+" language / syntax support
 Plugin 'rhysd/vim-crystal'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/confluencewiki.vim'
 
 " enhanced selectors
 Plugin 'kana/vim-textobj-user'
