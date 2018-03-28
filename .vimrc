@@ -143,7 +143,7 @@ set backspace=indent,eol,start
 set directory=$HOME/.vim/swapfiles//
 
 " default to system clipboard
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " search settings
 set hlsearch incsearch ignorecase
