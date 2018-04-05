@@ -17,10 +17,23 @@ call vundle#begin()
 " Vundle manages itself
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-vinegar'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'tpope/vim-surround'
+Plugin 'tmhedberg/matchit'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'tpope/vim-endwise'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'vim-scripts/StripWhiteSpaces'
+
+" enhanced selectors
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'lucapette/vim-textobj-underscore'
 
 " git stuff
 Plugin 'tpope/vim-fugitive'
@@ -32,31 +45,31 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 
-Plugin 'tpope/vim-surround'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'tpope/vim-endwise'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'vim-scripts/StripWhiteSpaces'
-
 " tag browsing / searching
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'gasparch/ctrlp-tagbar.vim'
 
-" language / syntax support
+" crystal
 Plugin 'rhysd/vim-crystal'
+
+" javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'fatih/vim-go'
-Plugin 'vim-scripts/confluencewiki.vim'
 
-" enhanced selectors
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'lucapette/vim-textobj-underscore'
+" ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'tpope/vim-rails'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-bundler'
+
+" go
+Plugin 'fatih/vim-go'
+
+" confluence
+Plugin 'vim-scripts/confluencewiki.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -85,11 +98,6 @@ nnoremap <leader>R :TagbarOpenAutoClose<CR>
 
 " vim-jsx config
 let g:jsx_ext_required = 0
-
-" nerdtree config
-map <leader>n :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
 
 " ctrlp.vim config
 let g:ctrlp_map = '<leader>t'
