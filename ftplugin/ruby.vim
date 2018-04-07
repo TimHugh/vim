@@ -1,4 +1,8 @@
 if executable('rubocop')
-  " autocmd BufWritePost *.rb :RuboCop
+  autocmd BufWritePost * silent! :RuboCop
   let g:vimrubocop_extra_args = '-D'
+endif
+
+if executable('ctags')
+  autocmd BufWritePost * silent! :Rtags
 endif
