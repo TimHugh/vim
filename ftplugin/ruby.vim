@@ -1,5 +1,5 @@
 if executable('rubocop')
-  autocmd BufWritePost * silent! :RuboCop
+  autocmd BufWritePost * silent! :RuboCop %
   let g:vimrubocop_extra_args = '-D'
 endif
 
