@@ -50,23 +50,26 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'gasparch/ctrlp-tagbar.vim'
 
+" ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rake'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'tpope/vim-bundler'
+
+" rails
+Plugin 'tpope/vim-rails'
+Plugin 'thoughtbot/vim-rspec'
+
+" go
+Plugin 'fatih/vim-go'
+
 " crystal
 Plugin 'rhysd/vim-crystal'
 
 " javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-
-" ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'tpope/vim-rails'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-bundler'
-
-" go
-Plugin 'fatih/vim-go'
 
 " confluence
 Plugin 'vim-scripts/confluencewiki.vim'
