@@ -55,6 +55,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rake'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'rainerborene/vim-reek'
 Plugin 'tpope/vim-bundler'
 
 " rails
