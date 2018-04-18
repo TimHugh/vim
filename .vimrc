@@ -124,6 +124,9 @@ nnoremap <leader>gl :Glog<CR>:copen<CR>
 
 """ END PLUGIN CONFIG
 
+" silent wrapper
+" (courtesy of https://vi.stackexchange.com/a/1958)
+:command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
 
 " toggle word wrap
 set nowrap
@@ -137,11 +140,14 @@ nnoremap <leader>E :Tab<SPACE>
 
 " auto display line numbers in active buffer
 set relativenumber
-" augroup numbertoggle
-"   autocmd!
-"   autocmd BufEnter,FocusGained * set relativenumber
-"   autocmd BufLeave,FocusLost * set norelativenumber
-" augroup END
+
+" ctags
+command Ctags call Ctags()
+function Ctags()
+  if executable('ctags')
+    execute 'Silent ctags -R > /dev/null &'
+  endif
+endfunction
 
 " indentation stuff
 set tabstop=2

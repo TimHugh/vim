@@ -3,6 +3,4 @@ if executable('rubocop')
   let g:vimrubocop_extra_args = '-D -P'
 endif
 
-if executable('ctags')
-  autocmd BufWritePost * silent! :Rtags
-endif
+autocmd BufWritePost * :Ctags
