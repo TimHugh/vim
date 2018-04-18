@@ -22,14 +22,13 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'tpope/vim-surround'
-Plugin 'tmhedberg/matchit'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'tpope/vim-endwise'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-scripts/StripWhiteSpaces'
 
 " enhanced selectors
+Plugin 'tmhedberg/matchit'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'lucapette/vim-textobj-underscore'
