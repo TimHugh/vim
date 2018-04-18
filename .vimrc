@@ -1,7 +1,6 @@
 set nocompatible
 syntax on
 set encoding=utf8
-set term=screen-256color
 colorscheme delek
 set noerrorbells novisualbell
 
