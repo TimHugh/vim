@@ -122,6 +122,12 @@ nnoremap <leader>gl :Glog<CR>:copen<CR>
 
 """ END PLUGIN CONFIG
 
+
+" fzf
+if executable('fzf')
+  set rtp+=/usr/local/opt/fzf
+endif
+
 " silent wrapper
 " (courtesy of https://vi.stackexchange.com/a/1958)
 :command! -nargs=1 Silent execute ':silent !'.<q-args> | execute ':redraw!'
