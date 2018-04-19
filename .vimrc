@@ -164,8 +164,10 @@ set backspace=indent,eol,start
 " set swap file directory to keep git working directories clean
 set directory=$HOME/.vim/swapfiles//
 
-" default to system clipboard
-" set clipboard=unnamed
+" clipboard shortcuts
+nnoremap Y "*y
+nnoremap <leader>p "*p
+nnoremap <leader>P "*P
 
 " search settings
 set hlsearch incsearch ignorecase
