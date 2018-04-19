@@ -146,8 +146,8 @@ nnoremap <leader>E :Tab<SPACE>
 set relativenumber
 
 " ctags
-command Ctags call Ctags()
-function Ctags()
+command! Ctags call Ctags()
+function! Ctags()
   if executable('ctags')
     execute 'Silent ctags -R > /dev/null &'
   endif
